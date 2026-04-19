@@ -22,3 +22,10 @@ This system processes log data from standard input and analyzes errors and laten
 
 ```bash
 cat server_log.txt | python3 main.py
+```
+
+## Real-time Usage
+
+```bash
+tail -f server_log.txt | python3 main.py
+```
