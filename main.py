@@ -12,7 +12,7 @@ def parse_line(line):
 
     try:
         ip = parts[1].split(":")[1].strip()
-        status_ms = parts[2].split(":")[1].strip()
+        status_text = parts[2].split(":")[1].strip()
         status = int(status_ms)
         time_ms = parts[3].split(":")[1].replace("ms", "").strip()
         latency = int(time_ms)
@@ -39,7 +39,7 @@ def is_slow(latency):
         return "ELEVATED"
     return "NORMAL"
 
-def build_labels(status,latency):
+def build_labels(status, latency):
     labels = []
     error_level = is_error(status)
     slow_level = is_slow(latency)
