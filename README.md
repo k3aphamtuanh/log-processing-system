@@ -29,3 +29,20 @@ cat server_log.txt | python3 main.py
 ```bash
 tail -f server_log.txt | python3 main.py
 ```
+## Debug Cases
+
+### Case 1: Server Error + High Latency
+Status: 500, Time: >2000ms  
+→ Server error with high latency before failure  
+
+---
+
+### Case 2: Slow but No Error
+Status: 200, Time: >1500ms  
+→ No error but potential performance bottleneck  
+
+---
+
+### Case 3: Client Error but Slow
+Status: 404, Time: high  
+→ Client error but unusually slow response  
