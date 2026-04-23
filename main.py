@@ -108,15 +108,17 @@ with (
     f_report.write(f"Total BOTH: {stats['both']}\n")
 
     if error_log:
-        top_error_ip = max(error_log, key=error_log.get)
-        f_report.write(
-            f"Top ERROR IP: {top_error_ip} ({error_log[top_error_ip]} times)\n"
-        )
+        top_error_ips = sorted(error_log.items(), key=lambda x: x[1],reverse=True)[:3]
+        f_report.write("Top ERROR IPs:\n")
+        for i, (ip, count) in enumerate(top_error_ips, 1):
+            f_report.write(f"{i}. {ip} ({count} times)\n")
+            
+    
 
     if slow_log:
-        top_slow_ip = max(slow_log, key=slow_log.get)
-        f_report.write(
-            f"Top SLOW IP: {top_slow_ip} ({slow_log[top_slow_ip]} times)\n"
-        )
+        top_slow_ips = sorted(slow_log.items(), key=lambda x: x[1], reverse=True)[:3]
+        f_report.write("Top SLOW IPs:\n")
+        for i, (ip, count) in enumerate(top_slow_ips, 1):
+            f_report.write(f"{i}. {ip} ({count} times)\n")
 
 print("Done. Check invalid_log.txt and report.txt")
