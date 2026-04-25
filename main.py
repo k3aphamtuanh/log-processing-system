@@ -109,7 +109,7 @@ with (
 
     if error_log:
         top_error_ips = sorted(error_log.items(), key=lambda x: x[1],reverse=True)[:3]
-        f_report.write("Top ERROR IPs:\n")
+        f_report.write("\nTop ERROR IPs:\n")
         for i, (ip, count) in enumerate(top_error_ips, 1):
             f_report.write(f"{i}. {ip} ({count} times)\n")
             
@@ -117,7 +117,7 @@ with (
 
     if slow_log:
         top_slow_ips = sorted(slow_log.items(), key=lambda x: x[1], reverse=True)[:3]
-        f_report.write("Top SLOW IPs:\n")
+        f_report.write("\nTop SLOW IPs:\n")
         for i, (ip, count) in enumerate(top_slow_ips, 1):
             f_report.write(f"{i}. {ip} ({count} times)\n")
 
