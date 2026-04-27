@@ -108,6 +108,7 @@ with (
     f_report.write(f"Total BOTH: {stats['both']}\n")
 
     if error_log:
+        # Sort IPs by count in descending order and take the top 3
         top_error_ips = sorted(error_log.items(), key=lambda x: x[1],reverse=True)[:3]
         f_report.write("\nTop ERROR IPs:\n")
         for i, (ip, count) in enumerate(top_error_ips, 1):
@@ -116,6 +117,7 @@ with (
     
 
     if slow_log:
+        # Sort IPs by count in descending order and take the top 3
         top_slow_ips = sorted(slow_log.items(), key=lambda x: x[1], reverse=True)[:3]
         f_report.write("\nTop SLOW IPs:\n")
         for i, (ip, count) in enumerate(top_slow_ips, 1):
