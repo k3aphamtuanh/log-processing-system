@@ -73,6 +73,7 @@ with (
         if result is None:
             stats["invalid"] += 1
             f_invalid.write(f"Line {stats['total']}: {line.strip()}\n")
+            # Flush immediately so invalid logs are written in real time
             f_invalid.flush()
             continue
 
@@ -97,6 +98,7 @@ with (
             f_report.write(
                 f"[{label}] Line {stats['total']} | IP:{ip} | Status:{status} | Time:{latency}ms\n"
             )
+            # Flush immediately so report output is updated in real time
             f_report.flush()
 
     f_report.write("\n===== SUMMARY =====\n")
