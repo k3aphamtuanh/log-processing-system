@@ -29,6 +29,11 @@ cat server_log.txt | python3 main.py
 ```bash
 tail -f server_log.txt | python3 main.py
 ```
+## Output Files
+
+- `report.txt`: contains detected error/slow requests and summary statistics
+- `invalid_log.txt`: contains invalid log lines that could not be parsed
+
 ## Debug Cases
 
 ### Case 1: Server Error + High Latency
