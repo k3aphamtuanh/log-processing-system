@@ -1,15 +1,32 @@
 # Log Processing System
 
 ## Overview
+
 This system processes log data from standard input and analyzes errors and latency levels.
 
+## Input Format
+
+Each log line should follow this format:
+
+```text
+TIME | IP:<ip_address> | STATUS:<http_status> | TIME:<latency>ms
+```
+
+Example:
+
+```text
+2026-04-30 10:00:00 | IP:192.168.1.10 | STATUS:500 | TIME:2300ms
+```
+
 ## Flow
+
 1. Read log data from standard input
 2. Parse each line into IP, status, and latency
 3. Classify:
    - Error (4xx, 5xx)
    - Latency levels (ELEVATED, HIGH, CRITICAL)
 4. Generate report and summary
+
 
 ## Features
 - Error classification (HTTP status)
