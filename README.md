@@ -50,6 +50,25 @@ tail -f server_log.txt | python3 main.py
 
 - `report.txt`: contains detected error/slow requests and summary statistics
 - `invalid_log.txt`: contains invalid log lines that could not be parsed
+## Example Output
+
+```text
+[ERROR:CRITICAL & SLOW:CRITICAL] Line 5 | IP:192.168.1.10 | Status:500 | Time:2300ms
+
+===== SUMMARY =====
+Total lines: 10
+Valid lines: 8
+Invalid lines: 2
+Total ERROR: 3
+Total SLOW: 4
+Total BOTH: 2
+
+Top ERROR IPs:
+1. 192.168.1.10 (2 times)
+
+Top SLOW IPs:
+1. 192.168.1.10 (3 times)
+```
 
 ## Debug Cases
 
