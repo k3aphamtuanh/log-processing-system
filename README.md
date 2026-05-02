@@ -4,6 +4,12 @@
 
 This system processes log data from standard input and analyzes errors and latency levels.
 
+## Why This Project
+
+This project simulates a basic log monitoring workflow.
+
+It reads raw server logs, detects HTTP errors and slow requests, handles invalid log lines, and generates a summary report for troubleshooting.
+
 ## Input Format
 
 Each log line should follow this format:
