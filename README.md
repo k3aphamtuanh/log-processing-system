@@ -41,6 +41,14 @@ Example:
 - Top error/slow IP detection
 - Invalid log handling
 
+## What It Detects
+
+- `ERROR:WARNING`: HTTP 4xx client-side errors
+- `ERROR:CRITICAL`: HTTP 5xx server-side errors
+- `SLOW:ELEVATED`: latency from 500ms to 999ms
+- `SLOW:HIGH`: latency from 1000ms to 1999ms
+- `SLOW:CRITICAL`: latency from 2000ms or higher
+
 ## Usage
 
 ```bash
