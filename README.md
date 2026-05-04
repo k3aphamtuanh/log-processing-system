@@ -49,6 +49,11 @@ Example:
 - `SLOW:HIGH`: latency from 1000ms to 1999ms
 - `SLOW:CRITICAL`: latency from 2000ms or higher
 
+## Requirements
+
+- Python 3.x
+- No external libraries required
+
 ## Usage
 
 ```bash
