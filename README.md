@@ -88,6 +88,13 @@ Top ERROR IPs:
 Top SLOW IPs:
 1. 192.168.1.10 (3 times)
 ```
+## How to Read the Report
+
+- Lines starting with `ERROR` indicate HTTP error responses.
+- Lines starting with `SLOW` indicate high latency requests.
+- `Total BOTH` means requests that were both error and slow.
+- `Top ERROR IPs` shows IP addresses with the most error responses.
+- `Top SLOW IPs` shows IP addresses with the most slow requests.
 
 ## Debug Cases
 
