@@ -41,6 +41,18 @@ Example:
 - Top error/slow IP detection
 - Invalid log handling
 
+## Current Scope
+
+This project is a command-line log processing tool.
+
+It focuses on:
+- parsing server log lines
+- detecting HTTP errors and slow requests
+- aggregating results by IP
+- generating text-based reports
+
+It does not include a web dashboard, database, or alert notification system yet.
+
 ## What It Detects
 
 - `ERROR:WARNING`: HTTP 4xx client-side errors
