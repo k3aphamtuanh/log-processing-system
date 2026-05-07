@@ -53,6 +53,14 @@ It focuses on:
 
 It does not include a web dashboard, database, or alert notification system yet.
 
+## Future Improvements
+
+Planned improvements:
+- add alert rules for repeated errors
+- add hourly summary reports
+- support more log formats
+- improve test cases for invalid logs
+
 ## What It Detects
 
 - `ERROR:WARNING`: HTTP 4xx client-side errors
