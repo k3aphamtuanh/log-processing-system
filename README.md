@@ -41,6 +41,15 @@ Example:
 - Top error/slow IP detection
 - Invalid log handling
 
+## Key Concepts Practiced
+
+- reading input from standard input
+- parsing and validating log lines
+- classifying HTTP status codes and latency levels
+- aggregating counts with dictionaries
+- sorting results to find top IP addresses
+- writing reports to output files
+
 ## Current Scope
 
 This project is a command-line log processing tool.
