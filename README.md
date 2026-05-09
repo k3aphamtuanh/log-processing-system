@@ -23,7 +23,14 @@ Example:
 ```text
 2026-04-30 10:00:00 | IP:192.168.1.10 | STATUS:500 | TIME:2300ms
 ```
+## Sample Input
 
+```text
+2026-04-30 10:00:00 | IP:192.168.1.10 | STATUS:500 | TIME:2300ms
+2026-04-30 10:00:01 | IP:192.168.1.11 | STATUS:200 | TIME:1800ms
+2026-04-30 10:00:02 | IP:192.168.1.12 | STATUS:404 | TIME:120ms
+invalid log line
+```
 ## Flow
 
 1. Read log data from standard input
