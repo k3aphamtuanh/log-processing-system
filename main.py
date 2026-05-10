@@ -59,6 +59,7 @@ stats = {
     "both": 0,
 }
 
+# Count error and slow requests by IP address
 error_log = {}
 slow_log = {}
 
