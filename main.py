@@ -49,7 +49,7 @@ def build_labels(status, latency):
         labels.append(f"SLOW:{slow_level}")
     return labels, error_level, slow_level
 
-
+# Track total, valid, invalid, error, slow, and both log counts
 stats = {
     "total": 0,
     "invalid": 0,
