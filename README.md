@@ -76,6 +76,7 @@ Planned improvements:
 - add hourly summary reports
 - support more log formats
 - improve test cases for invalid logs
+- containerize the project with Docker
 
 ## What It Detects
 
