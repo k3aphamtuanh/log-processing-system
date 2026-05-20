@@ -1,3 +1,8 @@
+"""Command-line log processing tool.
+
+Reads log lines from standard input, detects HTTP errors and slow requests,
+and writes results to report.txt and invalid_log.txt.
+"""
 import sys
 
 def parse_line(line):
