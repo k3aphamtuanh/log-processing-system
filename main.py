@@ -6,6 +6,10 @@ and writes results to report.txt and invalid_log.txt.
 import sys
 
 def parse_line(line):
+    """Parse one log line into IP, status, and latency.
+
+    Returns None if the line is empty, incomplete, or invalid.
+    """
     line = line.strip()
 
     if not line:
