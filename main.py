@@ -32,6 +32,7 @@ def parse_line(line):
 
 
 def is_error(status):
+    """Classify HTTP status code into error level."""
     if 500 <= status < 600:
         return "CRITICAL"
     elif 400 <= status < 500:
@@ -39,14 +40,13 @@ def is_error(status):
     return "OK"
 
 
-def is_slow(latency):
-    if latency >= 2000:
+def is_error(status):
+    """Classify HTTP status code into error level."""
+    if 500 <= status < 600:
         return "CRITICAL"
-    elif 1000 <= latency < 2000:
-        return "HIGH"
-    elif 500 <= latency < 1000:
-        return "ELEVATED"
-    return "NORMAL"
+    elif 400 <= status < 500:
+        return "WARNING"
+    return "OK"
 
 def build_labels(status, latency):
     labels = []
