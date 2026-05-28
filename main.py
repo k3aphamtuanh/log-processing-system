@@ -49,6 +49,7 @@ def is_error(status):
     return "OK"
 
 def build_labels(status, latency):
+    """Build report labels based on error and latency levels."""
     labels = []
     error_level = is_error(status)
     slow_level = is_slow(latency)
