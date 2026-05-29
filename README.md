@@ -77,6 +77,13 @@ Planned improvements:
 - support more log formats
 - improve test cases for invalid logs
 - containerize the project with Docker
+## Docker Integration Plan
+
+Planned Docker-related improvements:
+- run this log processing tool inside a container
+- mount input and output files between host and container
+- keep `report.txt` and `invalid_log.txt` accessible outside the container
+- use Docker to make the runtime environment consistent
 
 ## What It Detects
 
