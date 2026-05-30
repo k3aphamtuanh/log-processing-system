@@ -81,8 +81,8 @@ Planned improvements:
 
 Planned Docker-related improvements:
 - run this log processing tool inside a container
-- mount input and output files between host and container
-- keep `report.txt` and `invalid_log.txt` accessible outside the container
+- use Docker volumes to share input and output files between the host and container
+- keep `report.txt` and `invalid_log.txt` accessible on the host machine
 - use Docker to make the runtime environment consistent
 
 ## What It Detects
