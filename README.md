@@ -77,6 +77,7 @@ Planned improvements:
 - support more log formats
 - improve test cases for invalid logs
 - containerize the project with Docker
+
 ## Docker Integration Plan
 
 Planned Docker-related improvements:
@@ -84,6 +85,16 @@ Planned Docker-related improvements:
 - use Docker volumes to share input and output files between the host and container
 - keep `report.txt` and `invalid_log.txt` accessible on the host machine
 - use Docker to make the runtime environment consistent
+
+## Docker Run Example
+
+Run the project inside a Python container while mounting the current folder:
+
+```bash
+docker run -i --rm -v "$PWD":/app -w /app python:3.12-slim python main.py < server_log.txt
+```
+
+This keeps `report.txt` and `invalid_log.txt` available on the host machine through the mounted volume.
 
 ## What It Detects
 
