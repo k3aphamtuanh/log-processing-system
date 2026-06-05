@@ -69,6 +69,15 @@ It focuses on:
 
 It does not include a web dashboard, database, or alert notification system yet.
 
+## Project Files
+
+- `main.py`: command-line log processor that reads log data from standard input
+- `server_log.txt`: sample input log data
+- `report.txt`: generated report for detected error and slow requests
+- `invalid_log.txt`: invalid log lines that could not be parsed
+- `app.py`: small web service that exposes `report.txt` through HTTP
+- `README.md`: project documentation
+
 ## Future Improvements
 
 Planned improvements:
