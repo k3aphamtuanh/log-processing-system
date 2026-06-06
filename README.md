@@ -120,9 +120,19 @@ This keeps `report.txt` and `invalid_log.txt` available on the host machine thro
 
 ## Usage
 
+Run the log processor with sample log data:
+
+```bash
+python main.py < server_log.txt
+```
+
+Alternative pipe style:
+
 ```bash
 cat server_log.txt | python3 main.py
 ```
+
+`main.py` reads log data from standard input and does not open `server_log.txt` directly.
 
 ## Real-time Usage
 
