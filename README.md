@@ -139,6 +139,33 @@ cat server_log.txt | python3 main.py
 ```bash
 tail -f server_log.txt | python3 main.py
 ```
+## Docker CLI Usage
+
+Run the log processor inside a Python container:
+
+```bash
+docker rm -f vol-main
+docker run -i --name vol-main -v "$PWD":/app -w /app python:3.12-slim python main.py < server_log.txt
+```
+
+Flow:
+
+```text
+server_log.txt
+-> stdin
+-> Python container
+-> main.py
+-> report.txt / invalid_log.txt on the host machine through volume mount
+```
+
+Check the result:
+
+```bash
+docker logs vol-main
+ls -l
+cat report.txt
+cat invalid_log.txt
+```
 ## Output Files
 
 - `report.txt`: contains detected error/slow requests and summary statistics
