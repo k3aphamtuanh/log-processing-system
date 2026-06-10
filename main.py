@@ -22,7 +22,7 @@ def parse_line(line):
     try:
         ip = parts[1].split(":")[1].strip()
         status_text = parts[2].split(":")[1].strip()
-        status = int(status_ms)
+        status = int(status_text)
         time_ms = parts[3].split(":")[1].replace("ms", "").strip()
         latency = int(time_ms)
     except (IndexError, ValueError):
@@ -40,13 +40,14 @@ def is_error(status):
     return "OK"
 
 
-def is_error(status):
-    """Classify HTTP status code into error level."""
-    if 500 <= status < 600:
+def is_slow(latency):
+    if latency >= 2000:
         return "CRITICAL"
-    elif 400 <= status < 500:
-        return "WARNING"
-    return "OK"
+    elif latency >= 1000:
+        return "HIGH"
+    elif latency >= 500:
+        return "ELEVATED"
+    return "NORMAL"
 
 def build_labels(status, latency):
     """Build report labels based on error and latency levels."""
