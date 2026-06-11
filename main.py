@@ -41,6 +41,7 @@ def is_error(status):
 
 
 def is_slow(latency):
+    """Classify request latency into slow level."""
     if latency >= 2000:
         return "CRITICAL"
     elif latency >= 1000:
@@ -91,7 +92,7 @@ with (
 
         stats["valid"] += 1
         ip, status, latency = result
-        labels, error_level, slow_level = build_labels(status,latency)
+        labels, error_level, slow_level = build_labels(status, latency)
     
 
         if error_level != "OK":
@@ -123,7 +124,7 @@ with (
 
     if error_log:
         # Sort IPs by count in descending order and take the top 3
-        top_error_ips = sorted(error_log.items(), key=lambda x: x[1],reverse=True)[:3]
+        top_error_ips = sorted(error_log.items(), key=lambda x: x[1], reverse=True)[:3]
         f_report.write("\nTop ERROR IPs:\n")
         for i, (ip, count) in enumerate(top_error_ips, 1):
             f_report.write(f"{i}. {ip} ({count} times)\n")
