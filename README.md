@@ -173,21 +173,25 @@ cat invalid_log.txt
 ## Example Output
 
 ```text
-[ERROR:CRITICAL & SLOW:CRITICAL] Line 5 | IP:192.168.1.10 | Status:500 | Time:2300ms
+[ERROR:CRITICAL & SLOW:HIGH] Line 1 | IP:192.168.1.1 | Status:500 | Time:1200ms
+[ERROR:WARNING & SLOW:HIGH] Line 3 | IP:192.168.1.3 | Status:404 | Time:1500ms
+[ERROR:CRITICAL & SLOW:CRITICAL] Line 4 | IP:192.168.1.1 | Status:502 | Time:2100ms
 
 ===== SUMMARY =====
-Total lines: 10
-Valid lines: 8
-Invalid lines: 2
+Total lines: 4
+Valid lines: 4
+Invalid lines: 0
 Total ERROR: 3
-Total SLOW: 4
-Total BOTH: 2
+Total SLOW: 3
+Total BOTH: 3
 
 Top ERROR IPs:
-1. 192.168.1.10 (2 times)
+1. 192.168.1.1 (2 times)
+2. 192.168.1.3 (1 times)
 
 Top SLOW IPs:
-1. 192.168.1.10 (3 times)
+1. 192.168.1.1 (2 times)
+2. 192.168.1.3 (1 times)
 ```
 ## How to Read the Report
 
