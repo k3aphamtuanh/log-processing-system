@@ -87,13 +87,17 @@ Planned improvements:
 - improve test cases for invalid logs
 - containerize the project with Docker
 
-## Docker Integration Plan
+## Docker Integration
 
-Planned Docker-related improvements:
-- run this log processing tool inside a container
-- use Docker volumes to share input and output files between the host and container
-- keep `report.txt` and `invalid_log.txt` accessible on the host machine
-- use Docker to make the runtime environment consistent
+This project can run inside a Docker container.
+
+Docker is used to provide a consistent Python runtime and to share input/output files between the host machine and the container through a mounted volume.
+
+Current Docker usage:
+- run the log processor inside a Python container
+- mount the project folder into the container
+- read `server_log.txt` from standard input
+- generate `report.txt` and `invalid_log.txt` on the host machine
 
 ## Docker Run Example
 
