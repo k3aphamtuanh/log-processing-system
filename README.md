@@ -143,6 +143,31 @@ cat server_log.txt | python3 main.py
 ```bash
 tail -f server_log.txt | python3 main.py
 ```
+## Web Service Usage
+
+This project also includes a small web service in `app.py`.
+
+The web service exposes the generated `report.txt` file through HTTP.
+
+Run the web service:
+
+```bash
+python3 app.py
+```
+
+Available endpoints:
+
+```text
+/health  -> returns OK
+/report  -> returns the content of report.txt
+```
+
+Example checks:
+
+```bash
+curl -i http://localhost:8000/health
+curl -i http://localhost:8000/report
+```
 ## Docker CLI Usage
 
 Run the log processor inside a Python container:
