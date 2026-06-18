@@ -170,6 +170,27 @@ ls -l
 cat report.txt
 cat invalid_log.txt
 ```
+## VPS Test Note
+
+This project was tested on an Ubuntu EC2 VPS.
+
+Test command:
+
+```bash
+python3 main.py < server_log.txt
+```
+
+During the VPS test, two bugs were found and fixed:
+
+- fixed the wrong status variable in `parse_line`
+- replaced a duplicated `is_error` function with `is_slow`
+
+After the fix, the program successfully generated:
+
+- `report.txt`
+- `invalid_log.txt`
+
+This confirms that the log processor can run correctly in a Linux server environment.
 ## Output Files
 
 - `report.txt`: contains detected error/slow requests and summary statistics
