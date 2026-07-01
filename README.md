@@ -216,6 +216,22 @@ After the fix, the program successfully generated:
 - `invalid_log.txt`
 
 This confirms that the log processor can run correctly in a Linux server environment.
+## AWS/VPS Evidence
+
+This project was tested in a real Ubuntu EC2 VPS environment.
+
+Verified tasks:
+
+- connected to the VPS through SSH
+- cloned the GitHub repository into the VPS
+- ran the Python log processor on Ubuntu
+- generated `report.txt` and `invalid_log.txt`
+- ran the project inside Docker on the VPS
+- exposed the web service through a public port
+- verified `/health` with public `curl`
+- tested container restart behavior after VPS reboot
+
+This confirms that the project can run outside the local machine in a basic cloud server environment.
 ## Output Files
 
 - `report.txt`: contains detected error/slow requests and summary statistics
