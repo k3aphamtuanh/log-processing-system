@@ -232,6 +232,27 @@ Verified tasks:
 - tested container restart behavior after VPS reboot
 
 This confirms that the project can run outside the local machine in a basic cloud server environment.
+## Operations Debug Flow
+
+This project is also used to practice a basic operations troubleshooting flow.
+
+When the service has a problem, the investigation starts from the user-facing endpoint first, then moves deeper into the container and application layers.
+
+Debug order:
+
+1. Check the HTTP endpoint with `curl`
+2. Check container state with `docker ps -a`
+3. Check application logs with `docker logs`
+4. Enter the container with `docker exec` only when needed
+5. Verify recovery with `/health` and `/report`
+
+Example checks:
+
+```bash
+curl -i http://localhost:8000/health
+curl -i http://localhost:8000/report
+docker ps -a
+docker logs <container_name>
 ## Output Files
 
 - `report.txt`: contains detected error/slow requests and summary statistics
