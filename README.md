@@ -253,6 +253,30 @@ curl -i http://localhost:8000/health
 curl -i http://localhost:8000/report
 docker ps -a
 docker logs <container_name>
+## Missing Report File Incident
+
+A real incident was reproduced on the VPS:
+
+- `/health` returned `200 OK`
+- `/report` returned `500 Internal Server Error`
+- the container was running
+- port mapping was correct
+- application logs showed that `report.txt` was missing
+
+Recovery:
+
+```bash
+python3 main.py < server_log.txt
+```
+
+Verification:
+
+```bash
+curl -i http://localhost:8000/health
+curl -i http://localhost:8000/report
+```
+
+This incident demonstrates that a healthy container does not guarantee that every application dependency is available.
 ## Output Files
 
 - `report.txt`: contains detected error/slow requests and summary statistics
