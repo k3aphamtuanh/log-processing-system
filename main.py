@@ -41,7 +41,7 @@ def is_error(status):
 
 
 def is_slow(latency):
-    """Classify request latency into slow level."""
+    """Classify request latency into severity levels."""
     if latency >= 2000:
         return "CRITICAL"
     elif latency >= 1000:
