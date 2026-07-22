@@ -8,6 +8,14 @@ import sys
 
 PORT = 8000
 
+BASE_DIR = Path(__file__).resolve().parent
+
+SERVER_LOG_FILE = BASE_DIR / "server_log.txt"
+
+MAIN_FILE = BASE_DIR / "main.py"
+
+REPORT_FILE = BASE_DIR / "report.txt"
+
 class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
@@ -24,11 +32,11 @@ class Handler(BaseHTTPRequestHandler):
 
         if self.path == "/report":
 
-            with open("server_log.txt", "rb") as f:
+            with SERVER_LOG_FILE.open("rb") as f:
 
-                subprocess.run([sys.executable, "main.py"], stdin=f, check=True)
+                subprocess.run([sys.executable, str(MAIN_FILE)], stdin=f, check=True, cwd=BASE_DIR,)
 
-            report = Path("report.txt").read_text()
+            report = REPORT_FILE.read_text(encoding="utf-8")
 
             self.send_response(200)
 
