@@ -29,14 +29,32 @@ class Handler(BaseHTTPRequestHandler):
             self.wfile.write(b"OK")
 
             return
-
         if self.path == "/report":
 
-            with SERVER_LOG_FILE.open("rb") as f:
+            try:
 
-                subprocess.run([sys.executable, str(MAIN_FILE)], stdin=f, check=True, cwd=BASE_DIR,)
+                with SERVER_LOG_FILE.open("rb") as f:
 
-            report = REPORT_FILE.read_text(encoding="utf-8")
+                    subprocess.run(
+                        [sys.executable, str(MAIN_FILE)],
+                        stdin=f,
+                        check=True,
+                        cwd=BASE_DIR,
+                    )
+
+                report = REPORT_FILE.read_text(encoding="utf-8")
+
+            except (OSError, subprocess.CalledProcessError) as error:
+
+                self.send_response(500)
+
+                self.end_headers()
+
+                self.wfile.write(
+                    f"Report generation failed: {error}".encode()
+                )
+
+                return
 
             self.send_response(200)
 
