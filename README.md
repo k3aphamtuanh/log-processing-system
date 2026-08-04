@@ -158,8 +158,9 @@ python3 app.py
 Available endpoints:
 
 ```text
-/health  -> returns OK
-/report  -> returns the content of report.txt
+/health  -> returns HTTP 200 with OK
+/report  -> returns HTTP 200 with report.txt content
+/report  -> returns HTTP 500 if report generation fails
 ```
 
 Example checks:
