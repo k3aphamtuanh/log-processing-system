@@ -278,6 +278,30 @@ curl -i http://localhost:8000/report
 ```
 
 This incident demonstrates that a healthy container does not guarantee that every application dependency is available.
+## Kubernetes Core Progress
+
+Kubernetes lab environment:
+
+- AWS EC2-02-K8s-Lab
+- Ubuntu 24.04
+- kubeadm single-node cluster
+- containerd
+- Flannel CNI
+- kubectl
+
+Completed core labs:
+
+- Pod / Node / kubelet
+- Deployment / ReplicaSet
+- Service / ClusterIP
+- Labels / Selectors
+- Namespace
+- ConfigMap / Secret
+
+Current status:
+
+- K8s Core Lessons 1-6: PASS
+- Next: Readiness and Liveness Probes
 ## Output Files
 
 - `report.txt`: contains detected error/slow requests and summary statistics
