@@ -48,26 +48,22 @@ invalid log line
 - Top error/slow IP detection
 - Invalid log handling
 
-## Key Concepts Practiced
-
-- reading input from standard input
-- parsing and validating log lines
-- classifying HTTP status codes and latency levels
-- aggregating counts with dictionaries
-- sorting results to find top IP addresses
-- writing reports to output files
-
 ## Current Scope
 
-This project is a command-line log processing tool.
+This project is a small log-processing and monitoring service.
 
-It focuses on:
-- parsing server log lines
-- detecting HTTP errors and slow requests
-- aggregating results by IP
-- generating text-based reports
-
-It does not include a web dashboard, database, or alert notification system yet.
+Current capabilities:
+- parse and validate server log lines
+- detect HTTP errors and slow requests
+- aggregate results by IP
+- generate text-based reports
+- expose `/health` and `/report` through `app.py`
+- run the application with Docker
+- monitor HTTP status and latency
+- detect repeated failures
+- write monitoring logs
+- send Telegram alerts without storing secrets in the repository
+- run monitoring automatically with cron
 
 ## Project Files
 
