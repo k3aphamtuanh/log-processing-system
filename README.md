@@ -248,6 +248,8 @@ curl -i http://localhost:8000/health
 curl -i http://localhost:8000/report
 docker ps -a
 docker logs <container_name>
+```
+
 ## Missing Report File Incident
 
 A real incident was reproduced on the VPS:
@@ -274,28 +276,15 @@ curl -i http://localhost:8000/report
 This incident demonstrates that a healthy container does not guarantee that every application dependency is available.
 ## Kubernetes Core Progress
 
-Kubernetes lab environment:
+Status: 15/15 lessons completed.
 
-- AWS EC2-02-K8s-Lab
-- Ubuntu 24.04
-- kubeadm single-node cluster
-- containerd
-- Flannel CNI
-- kubectl
+- Lessons 1–13: AWS Kubernetes hands-on labs
+- Lessons 14–15: simulated incident exercises
+- Evidence: historical lab summaries; raw logs are not fully preserved
+- Scope: single-node learning environment, not production certification
 
-Completed core labs:
+See [Kubernetes Core Lab Evidence](docs/kubernetes-core-lab-evidence.md) for architecture, failures, recovery, verification, and evidence limitations.
 
-- Pod / Node / kubelet
-- Deployment / ReplicaSet
-- Service / ClusterIP
-- Labels / Selectors
-- Namespace
-- ConfigMap / Secret
-
-Current status:
-
-- K8s Core Lessons 1-6: PASS
-- Next: Readiness and Liveness Probes
 ## Output Files
 
 - `report.txt`: contains detected error/slow requests and summary statistics
